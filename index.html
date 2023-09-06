@@ -116,8 +116,14 @@
         // Make sure there are no duplicates in the array
         const choices=[]
         choices.push(correctAnswer)
-        while (choices.lengt<n) {
-            choices.push(getRandomElement(BREEDS))
+        while (choices.length<n) {
+            //choices.push(getRandomElement(possibleChoices))
+            let possibility=getRandomElement(possibleChoices)
+            if (!choices.includes(possibility)) {
+                choices.push(possibility) 
+            }
+            
+
         }
         return shuffleArray(choices)//some array
 
