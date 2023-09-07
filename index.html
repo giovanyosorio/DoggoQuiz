@@ -122,9 +122,6 @@
             if (!choices.includes(possibility)) {
                 choices.push(possibility) 
             }
-            
-            
-
         }
         return shuffleArray(choices)//some array
 
@@ -137,6 +134,12 @@
     function getBreedFromURL(url) {
         // The string method .split(char) may come in handy
         // Try to use destructuring as much as you can
+        let unsplitBreed=url.split("/")[4]
+        let [breed,subreed]=unsplitBreed.split("-")
+        return [subreed,breed].join(" ").trim()
+        
+        
+        //return url.split("/").reverse()[1]
 
     }
 
